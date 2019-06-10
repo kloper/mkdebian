@@ -1,0 +1,6 @@
+mmc rescan
+fatls mmc 0
+fatload mmc 0 0x30000000 uImage
+fatload mmc 0 0x34000000 zynq-zed.dtb
+setenv bootargs=root=/dev/mmcblk0p2 rw rootwait
+bootm 0x30000000 - 0x34000000

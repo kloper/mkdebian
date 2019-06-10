@@ -1,0 +1,7 @@
+mmc rescan
+fatls mmc 0
+fatload mmc 0 0x30000000 uImage
+fatload mmc 0 0x32000000 uarm_ramdisk.image.gz
+fatload mmc 0 0x34000000 zynq-zed.dtb
+bootm 0x30000000 0x32000000 0x34000000
+
